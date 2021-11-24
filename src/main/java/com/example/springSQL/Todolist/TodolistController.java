@@ -21,9 +21,25 @@ public class TodolistController {
         return todolistService.getAllTodo();
     }
 
+    @GetMapping("/{id}")
+    public Todolist getTodoById(@PathVariable String id){
+        return todolistService.getTodoById(id);
+    }
+
     @PostMapping
     public Todolist creatTodolist(@RequestBody Todolist todolist){
         return todolistService.createTodolist(todolist);
     }
+
+    @PutMapping("/{id}")
+    public void updateTodolist(@PathVariable String id,@RequestBody Todolist data){
+        todolistService.updateTodolist(id,data);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteTodolist (@PathVariable String id){
+        todolistService.deleteTodolist(id);
+    }
+
 
 }
