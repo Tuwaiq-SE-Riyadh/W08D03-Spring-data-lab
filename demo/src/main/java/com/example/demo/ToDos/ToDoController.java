@@ -23,7 +23,7 @@ public class ToDoController {
 
     @GetMapping("/{id}")
     public Todo getToDos(@PathVariable String id){
-        return toDoService.getUser(id);
+        return toDoService.getTodo(id);
     }
 
     @PostMapping

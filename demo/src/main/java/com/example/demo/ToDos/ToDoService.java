@@ -20,9 +20,9 @@ public class ToDoService {
         return toDoRepository.findAll();
     }
 
-    public Todo getUser(String id){
-        Long user_id = Long.parseLong(id);
-        return toDoRepository.findById(user_id).orElse(null);
+    public Todo getTodo(String id){
+        Long todo_id = Long.parseLong(id);
+        return toDoRepository.findById(todo_id).orElse(null);
     }
 
     public Todo createTodo(Todo todo){
@@ -30,8 +30,8 @@ public class ToDoService {
     }
 
     public void deleteTodo(String id){
-        Long user_id = Long.parseLong(id);
-        toDoRepository.deleteById(user_id);
+        Long todo_id = Long.parseLong(id);
+        toDoRepository.deleteById(todo_id);
     }
 
     public void updateToDo(String id, Todo data){
